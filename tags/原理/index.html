@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>nessus原理</title>
+	<title>tag: 原理</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">当前文章&nbsp;:&nbsp;《nessus原理》</p>
+			<p class="page-name">标签</p>
 			
 		
 	
@@ -147,158 +147,50 @@
 		<!-- content srart -->
 <div class="am-g am-g-fixed blog-fixed blog-content">
 	<div class="am-u-md-8 am-u-sm-12">
+		<div class="archive">
 
-		<article class="am-article blog-article-p">
-
-			<div class="am-article-hd">
+			<div class="blog-text-center">
 				
+					<i class="fa fa-book">原理</i>
+				
+			</div>  
 
+			
 
-				<h1 class="am-article-title blog-text-center">
-					
-					
-	
-		<a href="/2018/11/25/nessus原理/" itemprop="url">		
-			nessus原理		
-		</a>
-	
-
-				</h1>
-
-				<p class="am-article-meta blog-text-center">
-					<span>
-						<i class="fa fa-clock-o"></i> 
-						<a href="/2018/11/25/nessus原理/" itemprop="url">
-	<time datetime="2018-11-25T12:42:57.000Z" itemprop="datePublished">
-  		2018-11-25
-  </time>
-</a>    
-&nbsp;
-					</span>
-					
-					<span>						
-						
-							<i class="fa fa-tags"></i>
 							
-								<a href="#原理" title="原理" rel="1">原理</a>&nbsp;
-													 											
-						
-					</span>
-				</p>
-			</div>
-
-			<div class="am-article-bd">
-				<div class="content" id="post-content">
+				
+				
+				
 					
-						<p>学习专业的一开始，学长曾经说过学安全懂得基本原理很重要，所以在用Nessus之前网上查了关于Nessus原理的一些东西和其他的一些小知识点，整合一起，来发这篇博客。主要参考nessus基本原理及其关键技术分析。</p>
-<p>Nessus设计的出发点：当前的安全机制主要是通过访问控制(信息加密、安全路由器、防火墙技术来保护计算机和网络不被非法入侵)，但是仅仅是通过控制访问是远远不够的，一旦突破访问控制，网络将容易受到入侵，因此应从系统以及网络中存在的漏洞出发来解决安全问题。</p>
-<p>漏洞扫描技术分为两类：主机漏洞扫描技术和网络漏洞扫描技术。<br>主机漏洞扫描技术主要针对系统的配置缺陷。<br>网络漏洞扫描技术(如 Nessus)：不仅可以检测系统的漏洞，也可以对网络设备、整个网段进行检测。</p>
-<p>网络漏洞扫描系统：通过远程检测目标主机TCP/IP不同端口的服务，记录主机给予的回答。用这种方法来了解目标主机的各种信息，与网络漏洞扫描系统的漏洞库进行匹配。还有一种就是通过模拟黑客的攻击手法，对目标主机系统进行攻击的安全漏洞扫描(如测试弱口令)。</p>
-<p>网络漏洞扫描系统一般由：扫描引擎、用户配置控制台、扫描知识库、结果存储器和报告生成工具、漏洞数据库(扫描方法库)，五个部分组成。</p>
-<p>网络漏洞扫描系统的工作原理：首先，用户通过用户配置控制台模块向扫描引擎发出扫描令，然后，用户配置控制台模块向扫描引擎模块发 出相应的扫描请求，扫描引擎模块在接到请求之后启动相应的子功能模块，若扫描方法采用的是匹配检测法，则对被扫描主机进行扫描，通过对从被扫描主机返回的信息进行分析判断，若采用的是模拟攻击法，则在扫描方法库中调用模拟攻击代码，并扫描目标主机，最后利用当前活动扫描知识库中存储的扫描结果生成扫描报告，再由用户配置控制台模块最终呈现给用户。 </p>
-<p>Nesus是一种典型的基于客户/服务器结构的网络扫描系统。客户端包括用户配置工具和结果存储/报告生成工具。服务器端包括一个扫描方法库(由插件组成)、当前活动扫描知识库和一个扫描引擎。</p>
-<p>Nessus的扫描方法采用的是插件技术。插件是用脚本语言编写的子程序，通常系统先制定扫描策略，然后扫描程序根据策略调用一系列插件来执行漏洞扫描，检测出系统中存在的一个或多个漏洞。通常一个插件负责扫描一个或一类漏洞。</p>
-<p>Nessus的服务器端和客户端的通信过程中，Nessus遵循传输协议NTP协议。</p>
-<p>Nessus服务器端插件的更新可以从WWW.nessus.org网站上定期的下载，最终获得新的插件。 </p>
-<p>X—Scan是Windows平台上的一个很不错的国产安全漏洞扫描工具，它采用多线程方式对指定I)地址段进行安全漏洞扫描，支持插件功能，提供了图形界面和命令行两种操作方式。其扫描内容比较多，包括:标准端口状态及端Vlbannert信息、远程操作系统类型及版本、CGI漏洞、RPC漏洞、SQL-SERVER默认帐户、FTP弱口令等。对于一些已知漏洞，给出了相应的漏洞描述和修补解决方案。</p>
 
 					
-				</div>
-			</div>
-		</article>
-
-		<ul class="am-pagination">
-    
-	
-		<li class="am-pagination-next">
-		<a class="pull-right" href="/2018/11/24/第一篇/" title="第一篇">
-			下一篇 &raquo;
-		</a>
-		</li>
-	 
- </ul>
-        
-
-		<div class="theme-annie-comment-button-container">
-	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
-		加载评论
-		<!--加载评论-->
-	</button>
-</div>
-
-<div id="annie-comment-container" class="theme-annie-comment-main-container">
-
-	
-		
-			<!-- comment valine -->
-			<!-- show valine comment -->
-<div id="valineComment" class="comment"></div>
-
-<!-- valine`s js & css -->
-<script>
-	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
-</script>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/js/valine.min.js"></script>
-<link rel="stylesheet" href="/css/comment.css">
-
-<script>
-	var checkExistComment = setInterval(function() {
-		if( $('#valineComment').length ) {
-			new Valine({
-				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-				av: AV,
-				//使用id寻找div元素（使用class可能找不到）
-				el: '#valineComment',
-				emoticon_url: 'https://cloud.panjunwen.com/alu',
-				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
-				app_id: "3333....", //获取APP ID
-				app_key: "3333......", //获取APP KEY
-				placeholder: "no any!", //评论框占位提示文字        			
-			});
-			clearInterval(checkExistComment);
-		}
-	}, 100);
-</script>
-		
-	
-
-</div>
-
-<script type="text/javascript">
-	/* Show Comment */
-	var Annie_Comment = function() {
-		function Show_Hidden(obj) {
-			obj.style.display = 'block';
-		}
-		
-		//var obutton = $('#annie-comment-button');
-		//var obutton = $('#annie-comment-container');
-		var obutton = document.getElementById("annie-comment-button" || "0");
-		var odiv = document.getElementById("annie-comment-container");
-		if( 'obutton' ) {
-			obutton.onclick = function() {
-				Show_Hidden(odiv);
-				$("#annie-comment-button").css("display", 'none');
-				return false;
-			}
-		}
-	};
-
-	(function Annie_Init() {
-		Annie_Comment();
-	})();
-</script>
-		
-		<!--
-	时间：2018-09-24
-	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
--->
-
-	
-
+					<!--<a href="/archives/2018" class="archive-year">2018</a>-->
+				
+								
+				
+					  
+					<div class="archive-year">
+						<a href="/archives/2018/11">
+							2018-11
+						</a>
+					</div>				
+				  
+				
+				<div class="archive-item">
+					<div class="archive-post-title">									
+						<a href="/2018/11/25/nessus原理/" itemprop="url">nessus原理</a>
+					</div>
+					<div class="archive-post-time">
+						<a href="/2018/11/25/nessus原理/" itemprop="url">11-25</a>
+					</div>
+				</div>		        							
+			
+				
+			    
+		</div>
 	</div>
 </div>
+
 		</div>
 		</main>
 		
@@ -370,11 +262,6 @@
 	}
 </style>
 
-
-	<script src="/js/motto.js"></script>
-	<script type="text/javascript">
-		$(".motto").html(getMingYanContent());
-	</script>	
 
 
 
@@ -716,8 +603,6 @@
 
 
 
-
-	<script type="text/javascript" src="/js/toc.js"></script>
 
 
 <script type="text/javascript" src="/js/main.js"></script>
