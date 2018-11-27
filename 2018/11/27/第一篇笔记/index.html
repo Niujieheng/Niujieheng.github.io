@@ -10,7 +10,7 @@
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
-	<title>tags</title>
+	<title>第一篇笔记</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="apple-mobile-web-app-title" content="Amaze UI">
@@ -54,7 +54,7 @@
 		
 		
 			
-			<p class="page-name">标签</p>
+			<p class="page-name">当前文章&nbsp;:&nbsp;《第一篇笔记》</p>
 			
 		
 	
@@ -144,31 +144,160 @@
 		<!--main-->
 		<main> 
 		<div class="page-container">
-		<!--content start-->
+		<!-- content srart -->
 <div class="am-g am-g-fixed blog-fixed blog-content">
-    <div class="am-u-md-8 am-u-sm-12">
-        <article class="am-article blog-article-p">
+	<div class="am-u-md-8 am-u-sm-12">
 
-            <div class="page-header">
-	<div class="blog-text-center">
-		
-			
-			tags
+		<article class="am-article blog-article-p">
 
-		  	 		
-	</div>    	 		
-</div>  	 		
+			<div class="am-article-hd">
+				
 
-                
 
-                
+				<h1 class="am-article-title blog-text-center">
+					
+					
+	
+		<a href="/2018/11/27/第一篇笔记/" itemprop="url">		
+			第一篇笔记		
+		</a>
+	
 
-            
-        </article>
-    </div>
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<a href="/2018/11/27/第一篇笔记/" itemprop="url">
+	<time datetime="2018-11-27T15:44:22.000Z" itemprop="datePublished">
+  		2018-11-27
+  </time>
+</a>    
+&nbsp;
+					</span>
+					
+					<span>						
+						
+							<i class="fa fa-tags"></i>
+							
+								<a href="#笔记" title="笔记" rel="1">笔记</a>&nbsp;
+													 											
+						
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					
+						<p>信息收集中，最主要的是收集服务器的配置信息和网站的敏感信息，其中包括域名及子域名信息、目标网站系统、CMS指纹、目标网站真实IP、开放的端口。只要与目标网站相关的信息，都要去搜集。</p>
+<p>收集域名的信息方法：Whois查询、备案信息查询、收集敏感信息(google)</p>
+<p>收集子域名信息：子域名检测工具、搜索引擎枚举、第三方聚合应用枚举、证书透明度公开日志枚举、</p>
+<p>收集常用端口信息：Nmap、无状态端口扫描工具Masscan、ZMap和御剑高速TCP端口扫描工具</p>
+<p>指纹识别：是指网站CMS指纹识别、计算机操作系统及web容器的指纹识别。(CMS称整站系统或文章系统，)</p>
+<p>查找真实IP：目标服务器存在CDN、判断目标是否使用了CDN、绕过CDN寻找真实IP、验证获取的IP。</p>
+<p>收集敏感目录文件</p>
+<p>社会工程学</p>
+<p>XSS(跨站脚本攻击)：一种网站应用程序的安全漏洞攻击技术，是代码注入的一种。<br>      1.反射性XSS<br>      2.存储型XSS<br>      3.DOM型XSS(对 就故意不写全)<br>  DOM型是特殊的存储型，他俩的区别：存储型的攻击脚本永久地存放在目标服务器的数据库或文件中，而DOM是在客户端修改节点的，所以基于DOM型的XSS漏洞不需要与服务器交互。</p>
+<p>小知识点：<br>Cookie通过在客户端记录信息确定用户身份，Session通过在服务器端记录信息确定用户身份。<br>如果说Cookie机制是通过检查客户身上的“通行证”来确定客户身份的话，那么Session机制就是通过检查服务器上的“客户明细表”来确认客户身份。Session相当于程序在服务器上建立的一份客户档案，客户来访的时候只需要查询客户档案表就可以了。</p>
+
+					
+				</div>
+			</div>
+		</article>
+
+		<ul class="am-pagination">
+    
+	
+		<li class="am-pagination-next">
+		<a class="pull-right" href="/2018/11/25/nessus原理/" title="nessus原理">
+			下一篇 &raquo;
+		</a>
+		</li>
+	 
+ </ul>
+        
+
+		<div class="theme-annie-comment-button-container">
+	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
+		加载评论
+		<!--加载评论-->
+	</button>
 </div>
 
+<div id="annie-comment-container" class="theme-annie-comment-main-container">
 
+	
+		
+			<!-- comment valine -->
+			<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script>
+	window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')
+</script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+
+<script>
+	var checkExistComment = setInterval(function() {
+		if( $('#valineComment').length ) {
+			new Valine({
+				// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+				av: AV,
+				//使用id寻找div元素（使用class可能找不到）
+				el: '#valineComment',
+				emoticon_url: 'https://cloud.panjunwen.com/alu',
+				emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+				app_id: "3333....", //获取APP ID
+				app_key: "3333......", //获取APP KEY
+				placeholder: "no any!", //评论框占位提示文字        			
+			});
+			clearInterval(checkExistComment);
+		}
+	}, 100);
+</script>
+		
+	
+
+</div>
+
+<script type="text/javascript">
+	/* Show Comment */
+	var Annie_Comment = function() {
+		function Show_Hidden(obj) {
+			obj.style.display = 'block';
+		}
+		
+		//var obutton = $('#annie-comment-button');
+		//var obutton = $('#annie-comment-container');
+		var obutton = document.getElementById("annie-comment-button" || "0");
+		var odiv = document.getElementById("annie-comment-container");
+		if( 'obutton' ) {
+			obutton.onclick = function() {
+				Show_Hidden(odiv);
+				$("#annie-comment-button").css("display", 'none');
+				return false;
+			}
+		}
+	};
+
+	(function Annie_Init() {
+		Annie_Comment();
+	})();
+</script>
+		
+		<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+
+	
+
+	</div>
+</div>
 		</div>
 		</main>
 		
@@ -240,6 +369,11 @@
 	}
 </style>
 
+
+	<script src="/js/motto.js"></script>
+	<script type="text/javascript">
+		$(".motto").html(getMingYanContent());
+	</script>	
 
 
 
@@ -581,6 +715,8 @@
 
 
 
+
+	<script type="text/javascript" src="/js/toc.js"></script>
 
 
 <script type="text/javascript" src="/js/main.js"></script>
